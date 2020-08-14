@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect, reverse
 from .models import Product
 from .forms import ProductForm
 
@@ -21,7 +21,7 @@ def create_product(request):
     if request.method == "POST":
         form = ProductForm(request.POST)
         form.save()
-        return HttpResponse("Form Received")
+        return redirect(reverse(show_products))
     else:
         form = ProductForm()
         return render(request, 'products/create_product.template.html', {
