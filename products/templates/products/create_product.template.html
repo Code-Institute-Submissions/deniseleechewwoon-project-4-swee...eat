@@ -1,4 +1,5 @@
 {%load static%}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -12,14 +13,16 @@
     <!--StyleSheet CSS-->
     <link rel="stylesheet" href="{%static 'style.css' %}">
 
-    <title>Welcome to Swee...EAT</title>
+    <title>Create Product</title>
   </head>
   <body>
   <div class="container">
-    <h1>Welcome to Swee...EAT</h1>
-    <p>Hi {{first_name}} {{last_name}}</p>
-
-    <img src="{%static 'img/cupcake.jpeg'%}" width="500px">
+    <h1>Create Product</h1>
+    <form method="POST">    
+    {%csrf_token%}
+        {{form.as_p}}
+        <input type="submit">
+    </form>
   </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

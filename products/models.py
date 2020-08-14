@@ -11,4 +11,4 @@ class Product(models.Model):
     price = models.IntegerField(blank=False)
 
     def __str__(self):
-        return self.title
+        return self.name
