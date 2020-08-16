@@ -4,11 +4,40 @@
 {%block title%}Show All Products{%endblock%}
 
 {%block content%}
-    <h1>Show All Products</h1>
+	<h1>Show All Products</h1>
+	
+         <div class="card-column row align-self-center align-items-center">
+       
+        {%for product in products %}
+        
+            <div class="card" style="width: 20rem;">
+                <img class="card-img-top" src="{%static 'img/cupcake.jpeg'%}" alt="Card image cap">
+                <div class="card-body">
+                    <a href="{% url 'view_product_route' product_id=product.id %}"><h5 class="card-title">{{product.name}}</h5></a>
+                    <p class="card-text">{{product.category}}</p>
+                    <div>
+                        {%for tag in product.tags.all %}
+                        <span class="badge badge-pill badge-primary">{{tag.title}}</span>
+                        {%endfor%}
+                    </div>
+        
+                    <div class="col m-0 pl-0 pt-2">
+                        <a class="btn btn-primary" href="{% url 'update_product_route' product_id=product.id %}">Edit</a>
+                        <a class="btn btn-danger" href="{% url 'delete_product_route' product_id=product.id %}">Delete</a>
+                    </div>
+                    <div class="card-footer mt-2">
+                        <small class="text-muted">{{product.category}}</small>
+                    </div>
+                </div>
+            </div>
+        {%endfor%}
+        </div>
 
-<table class="table mt-2">
-	<tbody>
-		{%for product in products %}
+	
+        <!--
+        <table class="table mt-2">
+        {%for product in products %}
+
 		<tr>
 			<td>
 
@@ -26,7 +55,9 @@
 
 						<div class="col m-0 pl-0 pb-3">
 							<h6>{{product.description}}</h6>
-                            <ul><li>{{product.tags}}</li></ul>
+                            {%for tag in product.tags.all %}
+                            <span class="badge badge-pill badge-primary">{{tag.title}}</span>
+                            {%endfor%}
 						</div>
                         <div class="col m-0 pl-0 pb-3">
 							<h6>{{product.price}}</h6>
@@ -40,7 +71,8 @@
 				</div>
 			</td>
 		</tr>
-		{%endfor%}
-	</tbody>
+</tbody>
 </table>
+{%endfor%}
+-->
 {%endblock%}

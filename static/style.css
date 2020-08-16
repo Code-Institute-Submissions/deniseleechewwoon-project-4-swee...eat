@@ -1,3 +1,8 @@
 body {
     background-image: url("img/marble_bg.jpeg");
 }
+
+.row > div[class*='col-'] {
+  display: flex;
+  flex:1 0 auto;
+}

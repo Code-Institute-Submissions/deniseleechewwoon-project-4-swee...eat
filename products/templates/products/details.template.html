@@ -1,0 +1,50 @@
+{% extends 'base.template.html'%}
+{%load static%}
+
+{%block title%}Show All Products{%endblock%}
+
+{%block content%}
+
+	<h1>{{product.name}}</h1>
+
+        <table class="table mt-2">
+		<tr>
+			<td>
+
+				<div class="row mt-4 mb-2">
+					<div class="col-sm-6 media cards-gallery">
+						<img src="{%static 'img/cupcake.jpeg'%}" class="img-fluid">
+					</div>
+
+					<div class="col-sm-6 align-self-center align-items-center">
+                        <div class="col-sm-12">
+						<h3>{{product.name}}, {{product.category}}</h3>
+                        
+                        <div class="col-sm-12 p-0 m-0">
+						<h5 class="m-0">{{product.description}}</h5>
+                        </div>
+
+                        <div class="col-sm-12 p-0 mb-2">
+						{%for tag in product.tags.all %}
+						<span class="badge badge-pill badge-primary">{{tag.title}}</span>
+						{%endfor%}
+                        </div>
+
+						<div class="col-sm-12 p-0">
+							<h6>${{product.price}}</h6>
+						</div>
+
+						<div class="col-sm-12 m-0 pl-0 pb-3">
+							<a class="btn btn-primary" href="{% url 'update_product_route' product_id=product.id %}">Edit</a>
+							<a class="btn btn-danger" href="{% url 'delete_product_route' product_id=product.id %}">Delete</a>
+						</div>
+
+
+					</div>
+				</div>
+			</td>
+		</tr>
+</tbody>
+</table>
+
+{%endblock%}
