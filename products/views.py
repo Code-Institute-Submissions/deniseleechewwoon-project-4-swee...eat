@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect, reverse, get_object_or_404
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Product
 from .forms import ProductForm
@@ -26,6 +27,9 @@ def create_product(request):
     if request.method == "POST":
         form = ProductForm(request.POST)
         form.save()
+
+        messages.success(request, "New product has been added")
+
         return redirect(reverse(show_products))
     else:
         form = ProductForm()
