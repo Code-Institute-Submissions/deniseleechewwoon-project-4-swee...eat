@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect, reverse, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from .models import Product
 from .forms import ProductForm
 
@@ -20,7 +21,7 @@ def show_products(request):
         'products': all_products
     })
 
-
+@login_required
 def create_product(request):
     if request.method == "POST":
         form = ProductForm(request.POST)
