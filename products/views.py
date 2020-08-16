@@ -43,5 +43,16 @@ def edit_product(request, product_id):
     else:
         form = ProductForm(instance=product)
         return render(request, 'products/edit_product.template.html', {
-            'form': form
+            'form': form,
+            'product': product
         })
+
+def delete_product(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    if request.method == "POST":
+        product.delete()
+        return redirect(reverse(show_products))
+    else:
+        return render(request, 'products/confirm_delete_product.template.html', {
+            'product': product
+    })
