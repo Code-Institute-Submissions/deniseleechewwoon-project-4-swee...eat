@@ -6,8 +6,16 @@ def index(request):
     return render(request, 'reviews/index.template.html')
 
 def create_review(request):
-    form = ReviewForm()
-    return render(request, 'reviews/create_review.template.html', {
-            "form": form
-    })
+    if request.method == "POST":
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse("Review is created")
+        else:
+            return HttpResponse("Form has error")
+    else:
+        form = ReviewForm()
+        return render(request, 'reviews/create_review.template.html', {
+                "form": form
+        })
 
