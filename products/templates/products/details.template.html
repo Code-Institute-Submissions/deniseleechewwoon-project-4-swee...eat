@@ -7,10 +7,6 @@
 
 	<h1>{{product.name}}</h1>
 
-        <table class="table mt-2">
-		<tr>
-			<td>
-
 				<div class="row mt-4 mb-2">
 					<div class="col-sm-6 media cards-gallery">
 						<img src="{%static 'img/cupcake.jpeg'%}" class="img-fluid">
@@ -18,33 +14,49 @@
 
 					<div class="col-sm-6 align-self-center align-items-center">
                         <div class="col-sm-12">
-						<h3>{{product.name}}, {{product.category}}</h3>
-                        
-                        <div class="col-sm-12 p-0 m-0">
-						<h5 class="m-0">{{product.description}}</h5>
-                        </div>
+                            <h3>{{product.name}}, {{product.category}}</h3>
+                            
+                            <div class="col-sm-12 p-0 m-0">
+                            <h5 class="m-0">{{product.description}}</h5>
+                            </div>
 
-                        <div class="col-sm-12 p-0 mb-2">
-						{%for tag in product.tags.all %}
-						<span class="badge badge-pill badge-primary">{{tag.title}}</span>
-						{%endfor%}
-                        </div>
+                            <div class="col-sm-12 p-0 mb-2">
+                            {%for tag in product.tags.all %}
+                            <span class="badge badge-pill badge-primary">{{tag.title}}</span>
+                            {%endfor%}
+                            </div>
 
-						<div class="col-sm-12 p-0">
-							<h6>${{product.price}}</h6>
-						</div>
+                            <div class="col-sm-12 p-0">
+                                <h6>${{product.price}}</h6>
+                            </div>
 
-						<div class="col-sm-12 m-0 pl-0 pb-3">
-							<a class="btn btn-primary" href="{% url 'update_product_route' product_id=product.id %}">Edit</a>
-							<a class="btn btn-danger" href="{% url 'delete_product_route' product_id=product.id %}">Delete</a>
-						</div>
-
-
-					</div>
+                            <div class="col-sm-12 m-0 pl-0 pb-3">
+                                <a class="btn btn-primary" href="{% url 'update_product_route' product_id=product.id %}">Edit</a>
+                                <a class="btn btn-danger" href="{% url 'delete_product_route' product_id=product.id %}">Delete</a>
+                                <a class="btn btn-info" href="{% url 'create_review_route' product_id=product.id %}">Add a Review</a>
+                            </div>
+					    </div>
+				    </div>
 				</div>
-			</td>
-		</tr>
-</tbody>
-</table>
+                <div>
+                <h2 class="mt-2">Reviews</h2>
+                {%for review in product.review_set.all %}
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title">
+                            <h3>{{review.title}}</h3>
+                            </div>
+
+                            <div>
+                            <h3>{{review.content}}</h3>
+                            </div>
+
+                            <p>By {{review.user.username}}</p>
+                        </div>
+                    </div>
+                {%endfor%}
+
+                </div>
+
 
 {%endblock%}
