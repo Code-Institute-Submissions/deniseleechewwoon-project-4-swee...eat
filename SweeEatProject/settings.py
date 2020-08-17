@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'crispy_forms',
-    "products"
+    "products",
+    "reviews"
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

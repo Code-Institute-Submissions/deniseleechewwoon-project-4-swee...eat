@@ -16,17 +16,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import products.views
+import reviews.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('products/', products.views.index),
-    path('products/all', products.views.show_products, name='all_products_route'),
+    path('products/all',
+         products.views.show_products, name='all_products_route'),
     path('products/create', products.views.create_product),
     path('details/<product_id>',
          products.views.view_product, name='view_product_route'),
     path('products/update/<product_id>',
          products.views.edit_product, name='update_product_route'),
     path('products/delete/<product_id>',
-         products.views.delete_product, name='delete_product_route')
+         products.views.delete_product, name='delete_product_route'),
+    path('reviews/', reviews.views.index),
+    path('reviews/create', reviews.views.create_review)
 ]

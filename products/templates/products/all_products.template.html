@@ -14,13 +14,8 @@
                 <img class="card-img-top" src="{%static 'img/cupcake.jpeg'%}" alt="Card image cap">
                 <div class="card-body">
                     <a href="{% url 'view_product_route' product_id=product.id %}"><h5 class="card-title">{{product.name}}</h5></a>
-                    <p class="card-text">{{product.category}}</p>
-                    <div>
-                        {%for tag in product.tags.all %}
-                        <span class="badge badge-pill badge-primary">{{tag.title}}</span>
-                        {%endfor%}
-                    </div>
-        
+                    <p class="card-text">{{product.description}}</p>
+                            
                     <div class="col m-0 pl-0 pt-2">
                         <a class="btn btn-primary" href="{% url 'update_product_route' product_id=product.id %}">Edit</a>
                         <a class="btn btn-danger" href="{% url 'delete_product_route' product_id=product.id %}">Delete</a>

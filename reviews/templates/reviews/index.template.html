@@ -1,0 +1,14 @@
+{% extends 'base.template.html'%}
+{%load static%}
+
+{%block title%}Reviews{%endblock%}
+
+{%block content%}
+    {% if request.user.is_authenticated %}
+    <h1>Reviews, {{request.user}}</h1>
+    {% endif %}
+    <h1>Welcome to Swee...EAT Reviews</h1>
+    <p>Hi {{first_name}} {{last_name}}</p>
+
+    <img src="{%static 'img/cupcake.jpeg'%}" width="500px">
+{%endblock%}
