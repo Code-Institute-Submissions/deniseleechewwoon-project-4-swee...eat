@@ -3,10 +3,10 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<h1>Creating a new review for {{product.name}}</h1>
+<h1>Edit Review {{review.title}}</h1>
 <form method="POST">
  {{ form|crispy}}
  {% csrf_token %}
- <input type="submit" value="Create Review" class="btn btn-primary"/>
+ <input type="submit" value="Update Review" class="btn btn-primary"/>
 </form>
 {% endblock %}

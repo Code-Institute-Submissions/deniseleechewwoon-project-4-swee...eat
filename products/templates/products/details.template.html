@@ -52,6 +52,8 @@
                             </div>
 
                             <p>By {{review.user.username}}</p>
+
+                            <a class="btn btn-info" href="{% url 'update_review_route' review_id=review.id %}">Edit Review</a>
                         </div>
                     </div>
                 {%endfor%}

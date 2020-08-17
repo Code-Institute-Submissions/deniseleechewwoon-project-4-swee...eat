@@ -33,5 +33,7 @@ urlpatterns = [
          products.views.delete_product, name='delete_product_route'),
     path('reviews/', reviews.views.index),
     path('reviews/create/<product_id>',
-         reviews.views.create_review, name='create_review_route')
+         reviews.views.create_review, name='create_review_route'),
+    path('reviews/update/<review_id>',
+         reviews.views.edit_review, name='update_review_route')
 ]

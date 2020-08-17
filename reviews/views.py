@@ -1,8 +1,9 @@
-from django.shortcuts import render, HttpResponse, get_object_or_404
+from django.shortcuts import render, HttpResponse, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import ReviewForm
 from products.models import Product
+from .models import Review
 
 # Create your views here.
 def index(request):
@@ -30,4 +31,19 @@ def create_review(request, product_id):
         return render(request, 'reviews/create_review.template.html', {
                 "form": form,
                 "product": product
+        })
+
+def edit_review(request, review_id):
+    review = get_object_or_404(Review, pk=review_id)
+
+    if request.method == "POST":
+        form = ReviewForm(request.POST, instance=review)
+        form.save()
+        messages.success(request, "Review has been edited")
+        return redirect(reverse(index))
+    else:
+        form = ReviewForm(instance=review)
+        return render(request, 'reviews/edit_review.template.html', {
+            'form': form,
+            'review': review
         })
