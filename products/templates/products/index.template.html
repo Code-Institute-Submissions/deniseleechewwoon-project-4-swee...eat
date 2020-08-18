@@ -1,14 +1,35 @@
 {% extends 'base.template.html'%}
+{%load crispy_forms_tags%}
 {%load static%}
 
 {%block title%}Index{%endblock%}
 
 {%block content%}
     {% if request.user.is_authenticated %}
-    <h1>Welcome, {{request.user}}</h1>
+    <h1>Welcome to Swee...EAT, {{request.user}}</h1>
     {% endif %}
-    <h1>Welcome to Swee...EAT</h1>
-    <p>Hi {{first_name}} {{last_name}}</p>
 
-    <img src="{%static 'img/cupcake.jpeg'%}" width="500px">
+    <form method="GET">
+        {{form|crispy}}
+        <input type="submit" value="search"/>
+    </form>
+    <br><br>
+
+    <h2>Products Found</h2>
+    <div class="card-column row d-flex justify-content-around">
+    {%for product in products %}
+        
+            <div class="card mt-4" style="width: 20rem;">
+                <img class="card-img-top" src="{%static 'img/cupcake.jpeg'%}" alt="Card image cap">
+                <div class="card-body">
+                    <a href="{% url 'view_product_route' product_id=product.id %}"><h5 class="card-title">{{product.name}}</h5></a>
+                    <p class="card-text">${{product.price}}</p>
+                    <p class="card-text">{{product.description}}</p>
+                            
+                    <div class="card-footer mt-2">
+                        <small class="text-muted">{{product.category}}</small>
+                    </div>
+                </div>
+            </div>
+    {%endfor%}
 {%endblock%}

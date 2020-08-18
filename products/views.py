@@ -1,19 +1,45 @@
 from django.shortcuts import render, HttpResponse, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from .models import Product
-from .forms import ProductForm
+from .forms import ProductForm, SearchForm
 
 # Create your views here.
 
 
 def index(request):
-    fname = "Denise"
-    lname = "Lee"
-    return render(request, 'products/index.template.html', {
-        'first_name': fname,
-        'last_name': lname
-    })
+    form = SearchForm(request.GET)
+    if request.GET:
+        query = ~Q(pk__in=[])
+
+        if 'name' in request.GET and request.GET['name']:
+            name = request.GET['name']
+            query = query & Q(name__icontains=name)
+
+        if 'category' in request.GET and request.GET['category']:
+            category_id = request.GET['category']
+            query = query & Q(category=category_id)
+
+        if 'price_below' in request.GET and request.GET['price_below']:
+            price_below = request.GET['price_below']
+            price_query = Q(price__lte=price_below)
+            query = query & price_query
+
+        products = Product.objects.all()
+        products = products.filter(query)
+
+        return render(request, 'products/index.template.html', {
+            'form': form,
+            'products': products
+        })
+
+    else:
+        products = Product.objects.all()
+        return render(request, 'products/index.template.html', {
+            'form': form,
+            'products': products
+        })
 
 
 def show_products(request):
@@ -21,6 +47,7 @@ def show_products(request):
     return render(request, 'products/all_products.template.html', {
         'products': all_products
     })
+
 
 @login_required
 def create_product(request):
@@ -37,11 +64,13 @@ def create_product(request):
             'form': form
         })
 
+
 def view_product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     return render(request, 'products/details.template.html', {
         'product': product
     })
+
 
 def edit_product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
@@ -57,6 +86,7 @@ def edit_product(request, product_id):
             'product': product
         })
 
+
 def delete_product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     if request.method == "POST":
@@ -65,4 +95,4 @@ def delete_product(request, product_id):
     else:
         return render(request, 'products/confirm_delete_product.template.html', {
             'product': product
-    })
+        })
