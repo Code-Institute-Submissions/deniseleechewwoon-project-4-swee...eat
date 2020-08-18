@@ -1,0 +1,14 @@
+{% extends 'base.template.html'%}
+{%load static%}
+
+{%block title%}Delete Review{%endblock%}
+
+{%block content%}
+    <h1>Delete {{review.title}}</h1> 
+    <p>Are you sure?</p>
+    <form method="POST">    
+    {%csrf_token%}
+        <input class="btn btn-danger" type="submit" value="Confirm">
+        <a class="btn btn-primary" href="{% url 'all_products_route'%}">Cancel</a>
+    </form>
+{%endblock%}

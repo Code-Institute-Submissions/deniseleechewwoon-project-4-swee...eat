@@ -41,9 +41,20 @@ def edit_review(request, review_id):
         form.save()
         messages.success(request, "Review has been edited")
         return redirect(reverse(index))
+
     else:
         form = ReviewForm(instance=review)
         return render(request, 'reviews/edit_review.template.html', {
             'form': form,
             'review': review
         })
+
+def delete_review(request, review_id):
+    review = get_object_or_404(Review, pk=review_id)
+    if request.method == "POST":
+        review.delete()
+        return redirect(reverse(index))
+    else:
+        return render(request, 'reviews/confirm_delete_review.template.html', {
+            'review': review
+    })

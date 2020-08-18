@@ -54,6 +54,7 @@
                             <p>By {{review.user.username}}</p>
 
                             <a class="btn btn-info" href="{% url 'update_review_route' review_id=review.id %}">Edit Review</a>
+                            <a class="btn btn-danger" href="{% url 'delete_review_route' review_id=review.id %}">Delete Review</a>
                         </div>
                     </div>
                 {%endfor%}
