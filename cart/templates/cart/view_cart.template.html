@@ -1,0 +1,14 @@
+{% extends 'base.template.html'%}
+{%load static%}
+
+{%block title%}Shopping Cart{%endblock%}
+
+{%block content%}
+    <h1>Your Shopping Cart</h1>
+    {% for key, value in cart.items %}
+    <li>
+        {{value.name}} x {{value.qty}}<br/>
+        Cost: ${{value.cost}}     
+    </li>
+    {%endfor%}
+{%endblock%}

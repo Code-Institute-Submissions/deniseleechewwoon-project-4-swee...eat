@@ -33,6 +33,7 @@
                             <div class="col-sm-12 m-0 pl-0 pb-3">
                                 <a class="btn btn-primary" href="{% url 'update_product_route' product_id=product.id %}">Edit</a>
                                 <a class="btn btn-danger" href="{% url 'delete_product_route' product_id=product.id %}">Delete</a>
+                                <a class="btn btn-primary" href="{% url 'add_to_cart' product_id=product.id %}">Add to Cart</a>
                                 <a class="btn btn-info" href="{% url 'create_review_route' product_id=product.id %}">Add a Review</a>
                             </div>
 					    </div>
