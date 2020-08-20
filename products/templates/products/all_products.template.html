@@ -10,7 +10,7 @@
        
         {%for product in products %}
         
-            <div class="card" style="width: 20rem;">
+            <div class="card mt-4" style="width: 20rem;">
                 <img class="card-img-top" src="{%static 'img/cupcake.jpeg'%}" alt="Card image cap">
                 <div class="card-body">
                     <a href="{% url 'view_product_route' product_id=product.id %}"><h5 class="card-title">{{product.name}}</h5></a>

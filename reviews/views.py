@@ -35,12 +35,13 @@ def create_review(request, product_id):
 
 def edit_review(request, review_id):
     review = get_object_or_404(Review, pk=review_id)
+    product_id = review.product.id
 
     if request.method == "POST":
         form = ReviewForm(request.POST, instance=review)
         form.save()
         messages.success(request, "Review has been edited")
-        return redirect(reverse(index))
+        return redirect(reverse('view_product_route', args=(product_id,)))
 
     else:
         form = ReviewForm(instance=review)
@@ -51,9 +52,12 @@ def edit_review(request, review_id):
 
 def delete_review(request, review_id):
     review = get_object_or_404(Review, pk=review_id)
+    product_id = review.product.id
+
     if request.method == "POST":
         review.delete()
-        return redirect(reverse(index))
+        messages.success(request, "Review has been deleted")
+        return redirect(reverse('view_product_route', args=(product_id,)))
     else:
         return render(request, 'reviews/confirm_delete_review.template.html', {
             'review': review
