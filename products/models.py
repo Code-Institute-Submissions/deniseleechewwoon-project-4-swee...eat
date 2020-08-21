@@ -20,7 +20,7 @@ class Product(models.Model):
     name = models.CharField(blank=False, max_length=255, validators=[
                              MinLengthValidator(3)])
     description = models.TextField(blank=False)
-    price = models.IntegerField(blank=False)
+    price = models.DecimalField(max_digits=10, decimal_places=2, blank=False)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     tags = models.ManyToManyField(Tags)
 
