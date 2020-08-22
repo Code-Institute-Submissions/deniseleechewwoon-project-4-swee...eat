@@ -1,11 +1,13 @@
 from django import forms
 from .models import Product, Tags, Category
+from cloudinary.forms import CloudinaryJsFileField
 
 
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ('name', 'description', 'price', 'category', 'tags')
+        fields = ('name', 'description', 'price', 'category', 'tags', 'cover')
+    cover = CloudinaryJsFileField()
 
 
 class SearchForm(forms.Form):

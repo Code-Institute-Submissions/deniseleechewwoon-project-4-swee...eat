@@ -1,7 +1,10 @@
 {% extends 'base.template.html'%}
+{% load cloudinary %}
 {%load static%}
 
 {%block title%}Show All Products{%endblock%}
+
+
 
 {%block content%}
 
@@ -9,7 +12,7 @@
 
 				<div class="row mt-4 mb-2">
 					<div class="col-sm-6 media cards-gallery">
-						<img src="{%static 'img/cupcake.jpeg'%}" class="img-fluid">
+                        {% cloudinary product.cover class="img-fluid"%}
 					</div>
 
 					<div class="col-sm-6 align-self-center align-items-center">
