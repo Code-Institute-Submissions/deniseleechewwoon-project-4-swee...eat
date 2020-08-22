@@ -1,5 +1,6 @@
 {% extends 'base.template.html'%}
 {%load crispy_forms_tags%}
+{% load cloudinary %}
 {%load static%}
 
 {%block title%}Index{%endblock%}
@@ -20,7 +21,7 @@
     {%for product in products %}
         
             <div class="card mt-4" style="width: 20rem;">
-                <img class="card-img-top" src="{%static 'img/cupcake.jpeg'%}" alt="Card image cap">
+                {% cloudinary product.cover class="card-img-top" crop="fill"%}
                 <div class="card-body">
                     <a href="{% url 'view_product_route' product_id=product.id %}"><h5 class="card-title">{{product.name}}</h5></a>
                     <p class="card-text">${{product.price}}</p>
