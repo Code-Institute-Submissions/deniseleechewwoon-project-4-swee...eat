@@ -39,6 +39,7 @@
                 {%endfor%}
                 
                 <h4>Cart Cost: ${{total|floatformat:2 }}</h4>
+                <a href="{% url 'checkout' %}" class="btn btn-primary">Checkout</a>
                 </div>
 
 
