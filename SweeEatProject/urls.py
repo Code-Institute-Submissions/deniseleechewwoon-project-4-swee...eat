@@ -38,5 +38,6 @@ urlpatterns = [
          reviews.views.edit_review, name='update_review_route'),
     path('reviews/delete/<review_id>',
          reviews.views.delete_review, name='delete_review_route'),
-    path('cart/', include('cart.urls'))
+    path('cart/', include('cart.urls')),
+    path('checkout/', include('checkout.urls'))
 ]
