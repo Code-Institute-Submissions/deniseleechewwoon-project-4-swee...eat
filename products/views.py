@@ -53,17 +53,22 @@ def show_products(request):
 def create_product(request):
     if request.method == "POST":
         form = ProductForm(request.POST)
-        form.save()
 
-        messages.success(request, "New product has been added")
+        if form.is_valid():
+            form.save()
+            messages.success(request, "New product has been added")
+            return redirect(reverse(show_products))
 
-        return redirect(reverse(show_products))
+        else:
+            return render(request, 'products/create_product.template.html', {
+                'form': form
+            })
+
     else:
         form = ProductForm()
         return render(request, 'products/create_product.template.html', {
             'form': form
         })
-
 
 def view_product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
@@ -85,6 +90,7 @@ def edit_product(request, product_id):
             'form': form,
             'product': product
         })
+
 
 def delete_product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)

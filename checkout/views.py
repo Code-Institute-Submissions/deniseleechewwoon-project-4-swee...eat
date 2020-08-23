@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404, HttpResponse, reverse
+from django.shortcuts import render, get_object_or_404, HttpResponse, reverse, redirect
 from django.contrib.sites.models import Site
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib import messages
 
 # import in the settings
 from django.conf import settings
@@ -23,6 +24,8 @@ def checkout(request):
 
     line_items = []
 
+    all_product_ids = []
+
     for product_id, product in cart.items():
         product_model = get_object_or_404(Product, pk=product_id)
 
@@ -30,11 +33,11 @@ def checkout(request):
             "name": product_model.name,
             "amount": int(product_model.price * 100),
             "quantity": product['qty'],
-            "currency": "usd",
-            "description": product_model.id
+            "currency": "usd"
          }
 
         line_items.append(item)
+        all_product_ids.append(str(product_model.id))
 
     current_site = Site.objects.get_current()
     domain = current_site.domain
@@ -42,6 +45,7 @@ def checkout(request):
     session = stripe.checkout.Session.create(
         payment_method_types=["card"],
         line_items=line_items,
+        metadata={'all_products_id': ",".join(all_product_ids)},
         client_reference_id=request.user.id,
         success_url=domain + reverse("checkout_success"),
         cancel_url=domain + reverse("checkout_cancelled")
@@ -54,7 +58,9 @@ def checkout(request):
 
 
 def checkout_success(request):
-    return HttpResponse("checkout success")
+    request.session["shopping_cart"] = {}
+    messages.success(request, "Your purchases has been completed")
+    return redirect(reverse('all_products_route'))
 
 
 def checkout_cancelled(request):
@@ -87,9 +93,9 @@ def payment_completed(request):
 
 def handle_payment(session):
     user = get_object_or_404(User, pk=session["client_reference_id"])
+    all_product_ids = session['metadata']['all_products_id'].split(",")
 
-    for line_item in session["display_items"]:
-        product_id = int(line_item["custom"]["description"])
+    for product_id in all_product_ids:
         product_model = get_object_or_404(Product, pk=product_id)
 
         # create the purchase model
@@ -97,4 +103,3 @@ def handle_payment(session):
         purchase.product_id = product_model
         purchase.user_id = user
         purchase.save()
-
