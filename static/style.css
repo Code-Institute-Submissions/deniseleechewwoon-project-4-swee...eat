@@ -6,3 +6,65 @@ body {
   display: flex;
   flex:1 0 auto;
 }
+
+.main-logo{
+    font-family: 'Dancing Script', cursive;
+    font-style: bold;
+    color: #ff644e;
+}
+
+
+@media screen and (min-width: 601px) {
+  .main-logo {
+    font-size: 130px;
+  }
+}
+
+/* Home Page*/
+@media screen and (max-width: 600px) {
+  div.example {
+    font-size: 50px;
+  }
+}
+
+.btn-custom {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: white;
+    background-color: black;
+    padding: 14px 40px;
+}
+
+.btn-custom:hover{
+     background: #ff968d;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 14px;
+  right: 0;
+  height: 100%;
+  width: 93%;
+  opacity: 0;
+  transition: .7s ease;
+  background-color: black;
+}
+
+.overlay:hover{
+  opacity: 0.7;
+}
+
+.text {
+  font-family: 'Lato', sans-serif;
+  color: #ff968d;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}

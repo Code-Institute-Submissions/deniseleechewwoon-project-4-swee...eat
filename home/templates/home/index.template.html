@@ -1,0 +1,53 @@
+{% extends 'base.template.html'%}
+{%load static%}
+
+{%block title%}Swee...eat{%endblock%}
+
+{%block content%}
+	<div class="container-fluid text-center">
+    <h1 class="main-logo">Swee...eat</h1>
+	</div>
+
+    <div class="container-fluid text-center pt-4 pb-5">
+    <btn class="btn-custom" href="#" role="button">SHOP NOW</btn>
+	</div>
+
+    <div class="container fluid align-items-center">
+		<div class="row">
+            <div class="container fluid col-md-6 d-flex justify-content-center">
+            <img src="{%static 'img/cupcake.jpeg'%}" alt="Cupcake" class="image img-fluid">
+            <div class="overlay">
+                <div class="text">CUPCAKES</div>
+            </div>
+            </div>
+
+            <div class="container fluid col-md-6 d-flex justify-content-center">
+            <img src="{%static 'img/cupcake.jpeg'%}" alt="Cupcake" class="image img-fluid">
+            <div class="overlay">
+                <div class="text">CHOCOLATE PRALINE</div>
+            </div>
+            </div>
+        </div>
+	</div>
+    
+    <br>
+
+    <div class="container fluid align-items-center">
+		<div class="row">
+            <div class="container fluid col-md-6 d-flex justify-content-center ">
+            <img src="{%static 'img/cupcake.jpeg'%}" alt="Cupcake" class="image img-fluid">
+            <div class="overlay">
+                <div class="text">MACARONS</div>
+            </div>
+            </div>
+
+            <div class="container fluid col-md-6 d-flex justify-content-center">
+            <img src="{%static 'img/cupcake.jpeg'%}" alt="Cupcake" class="image img-fluid">
+            <div class="overlay">
+                <div class="text">WHOLE CAKES</div>
+            </div>
+            </div>
+        </div>
+	</div>
+         
+{%endblock%}
