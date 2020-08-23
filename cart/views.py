@@ -52,3 +52,21 @@ def remove_from_cart(request, product_id):
         messages.success(request, "The item has been removed")
 
     return redirect(reverse('view_cart'))
+
+
+def update_quantity(request, product_id):
+    cart = request.session["shopping_cart"]
+    if product_id in cart:
+        cart[product_id]['qty'] = request.POST['qty']
+        cart[product_id]['total_cost'] = int(
+            request.POST['qty']) * float(cart[product_id]['cost'])
+
+        request.session["shopping_cart"] = cart
+        messages.success(
+            request, f"Quantity for {cart[product_id]['name']} has been changed")
+
+        return redirect(reverse('view_cart'))
+    else:
+        messages.success(request, "The products doesn't exist in your cart.")
+        return redirect(reverse('view_cart'))
+
