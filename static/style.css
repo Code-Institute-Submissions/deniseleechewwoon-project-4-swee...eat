@@ -7,6 +7,10 @@ body {
   flex: 1 0 auto;
 }
 
+.clear {
+    clear: both;
+}
+
 .main-logo {
   font-family: "Dancing Script", cursive;
   font-style: bold;
