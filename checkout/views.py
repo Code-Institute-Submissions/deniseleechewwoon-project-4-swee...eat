@@ -51,7 +51,7 @@ def checkout(request):
         cancel_url=domain + reverse("checkout_cancelled")
     )
 
-    return render(request, 'checkout/checkout.template.html', {
+    return render(request, "checkout/checkout.template.html", {
         "session_id": session.id,
         "public_key": settings.STRIPE_PUBLISHABLE_KEY
     })
