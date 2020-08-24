@@ -16,7 +16,7 @@ body {
 
 @media screen and (min-width: 601px) {
   .main-logo {
-    font-size: 130px;
+    font-size: 100px;
   }
 }
 
@@ -80,7 +80,7 @@ a.navbar-brand:hover {
 
 @media screen and (max-width: 600px) {
     .content-ctm {
-        padding-top: 200px;
+        padding-top: 210px;
     }
 }
 
