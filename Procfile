@@ -1,0 +1,1 @@
+web: gunicorn SweeEatProject.wsgi:application
