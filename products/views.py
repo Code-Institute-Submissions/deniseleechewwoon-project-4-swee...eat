@@ -83,8 +83,14 @@ def edit_product(request, product_id):
 
     if request.method == "POST":
         form = ProductForm(request.POST, instance=product)
-        form.save()
-        return redirect(reverse(show_products))
+        if form.is_valid():
+            form.save()
+            return redirect(reverse(show_products))
+        else:
+            return render(request, 'products/edit_product.template.html', {
+                'form': form,
+                'product': product
+            })
     else:
         form = ProductForm(instance=product)
         return render(request, 'products/edit_product.template.html', {

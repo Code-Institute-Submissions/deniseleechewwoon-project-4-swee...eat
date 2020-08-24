@@ -34,7 +34,10 @@ def view_cart(request):
 
     total = 0
     for k, v in cart.items():
+        cart[k]['total_cost'] = int(cart[k]['qty'])*float(cart[k]['cost'])
         total += float(v['cost']) * int(v['qty'])
+
+    request.session["shopping_cart"] = cart
 
     return render(request, 'cart/view_cart.template.html', {
         "cart": cart,
@@ -58,8 +61,6 @@ def update_quantity(request, product_id):
     cart = request.session["shopping_cart"]
     if product_id in cart:
         cart[product_id]['qty'] = request.POST['qty']
-        cart[product_id]['total_cost'] = int(
-            request.POST['qty']) * float(cart[product_id]['cost'])
 
         request.session["shopping_cart"] = cart
         messages.success(
