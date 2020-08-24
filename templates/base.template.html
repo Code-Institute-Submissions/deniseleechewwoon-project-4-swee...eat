@@ -15,56 +15,82 @@
     <!--Google Font-->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Lato&display=swap" rel="stylesheet">
 
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 
     <title>{%block title%}
     {%endblock%}</title>
   </head>
+  
   <body>
-    <!--Navbar-->
-  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-    <a class="navbar-brand" href="#">Swee...eat</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end collapsingNavbar" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="{% url 'homepage' %}">Home</a>
-        </li>
-  
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'all_products_route' %}">Swee..eat Selections</a>
-        </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="#">Our Story</a>
-        </li>
-  
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact Us</a>
-        </li>
+	<!--A.Header and B.Navbar-->
+	<header class="fixed-top">
+		<!--A.Header-->
+        <div class="row m-0 header-ctm">
+			<div class="col-md-4 order-1 col-12 d-flex justify-content-md-start justify-content-center">
+				<a href="{% url 'homepage' %}" style="text-decoration: none" class="navbar-brand">
+					<span class="ml-lg-2 ml-md-0 d-inline d-md-block d-lg-inline"><i class="fas fa-stroopwafel"></i>&nbsp;Swee...eat</span>
+				</a>
+			</div>
+			<div class="col-md-4 col-12 pt-2 justify-content-center d-flex order-3 order-md-2">
+				<span class="text-center"><i class="fas fa-truck"></i>&nbsp;&nbsp;FREE DELIVERY FOR ALL ORDERS</span>
+			</div>
+			<div class="col-md-4 col-12 d-flex justify-content-md-end justify-content-center pt-2 order-2 order-md-3">
+				{% if not request.user.is_authenticated %}
+				<a class="ml-3 nav-link"
+					href="{%url 'account_login'%}"><i class="fas fa-user-lock"></i>&nbsp;&nbsp;<b>LOGIN</b></a>
+				<a class="ml-3 nav-link"
+					href="{%url 'account_signup'%}"><i class="fas fa-user-plus"></i>&nbsp;&nbsp;<b>REGISTER</b></a>
+				{% endif %}
+				{% if request.user.is_authenticated %}
+				<a class="nav-link ml-3" href="#"><i class="far fa-id-card"></i>&nbsp;&nbsp;<b>PROFILE</b></a>
+				<a class="nav-link ml-3"
+					href="{%url 'account_logout'%}"><b><i class="fas fa-sign-out-alt"></i> LOGOUT</b></a>
+				{% endif %}
+				{% if request.user.is_superuser %}
+				<a class="nav-link ml-3" href="#"><b><i class="fas fa-user-cog"></i> ADMIN</b></a>
+				{% endif %}
+			</div>
+		</div>
+	
+		<!--B.Navbar-->
+		<nav class="navbar navbar-expand-md">
+			<button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+	      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+	      <span class="navbar-toggler-icon navbar-dark"></span>
+	    </button>
+			<div class="collapse navbar-collapse  collapsingNavbar" id="navbarNavDropdown">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="{% url 'homepage' %}">Home</a>
+					</li>
+	
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'all_products_route' %}">Swee..eat Selections</a>
+					</li>
+	
+					<li class="nav-item">
+						<a class="nav-link" href="#">Our Story</a>
+					</li>
+	
+					<li class="nav-item">
+						<a class="nav-link" href="#">Contact Us</a>
+					</li>
+				</ul>
+				<ul class="navbar-nav ml-auto justify-content-end">
+					<li class="nav-item">
+						<a class="nav-link"
+							href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;Cart({{number_of_items}})</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	
+	</header>
 
-        <li class="nav-item">
-        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-        </li>
 
-        <li class="nav-item">
-        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-        </li>
-
-        <li class="nav-item">
-        <a class="nav-link" href="{% url 'view_cart' %}">Shopping Cart ({{number_of_items}})</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-
-    <div class="container">
-	<div class="header mt-5 pt-5">
-        <p>WELCOME, {{request.user}}</p>
-	</div>
+    <div class="container content-ctm">
     {%if messages %}
         <div class="alert alert-success">
             {%for message in messages%}
