@@ -70,6 +70,7 @@ def create_product(request):
             'form': form
         })
 
+
 def view_product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     return render(request, 'products/details.template.html', {
