@@ -72,7 +72,7 @@ def payment_completed(request):
     payload = request.body
 
     sig_header = request.META["HTTP_STRIPE_SIGNATURE"]
-    endpoint_secret = "whsec_Qu9MPpHB4MzEdu8IBP5pWmBYYrbWP6np"
+    endpoint_secret = settings.SIGNING_SECRET
     event = None
 
     try:
