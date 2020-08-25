@@ -1,0 +1,15 @@
+{% extends 'base.template.html'%}
+{%load crispy_forms_tags%}
+{%load static%}
+
+{%block title%}Delivery Address{%endblock%}
+
+{%block content%}
+    <h1>Create Delivery</h1>
+    <form method="POST">    
+    {%csrf_token%}
+        {{form|crispy}}
+        <input type="submit">
+    </form>
+{%endblock%}
+

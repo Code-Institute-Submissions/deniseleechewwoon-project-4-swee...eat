@@ -3,9 +3,9 @@ from django.urls import path, include
 import products.views
 
 urlpatterns = [
-    path('', products.views.index),
+    path('', products.views.index, name='all_products_route'),
     path('all',
-         products.views.show_products, name='all_products_route'),
+         products.views.show_products, name='manage_products_route'),
     path('create', products.views.create_product),
     path('details/<product_id>',
          products.views.view_product, name='view_product_route'),

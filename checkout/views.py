@@ -12,9 +12,34 @@ import stripe
 # import in the product
 from products.models import Product
 
+#import in OrderForm
+from .forms import OrderForm
+
 # import in the purchase and user
 from .models import Purchase
+from .models import Delivery
 from django.contrib.auth.models import User
+
+
+def create_delivery(request):
+    if request.method == "POST":
+        form = OrderForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Delivery details has has been added")
+            return HttpResponse("delivery address added")
+
+        else:
+            return render(request, 'checkout/create_delivery.template.html', {
+                'form': form
+            })
+
+    else:
+        form = OrderForm()
+        return render(request, 'checkout/create_delivery.template.html', {
+                'form': form
+            })
 
 
 def checkout(request):
@@ -25,6 +50,8 @@ def checkout(request):
     line_items = []
 
     all_product_ids = []
+
+    all_delivery_ids = []
 
     for product_id, product in cart.items():
         product_model = get_object_or_404(Product, pk=product_id)
@@ -94,12 +121,17 @@ def payment_completed(request):
 def handle_payment(session):
     user = get_object_or_404(User, pk=session["client_reference_id"])
     all_product_ids = session['metadata']['all_products_id'].split(",")
+    #all_delivery_ids = session['metadata']['all_delivery_id'].split(",")
 
     for product_id in all_product_ids:
         product_model = get_object_or_404(Product, pk=product_id)
+
+    # for delivery_id in all_delivery_ids:
+    #     purchase_delivery = get_object_or_404(Delivery, pk=delivery_id)
 
         # create the purchase model
         purchase = Purchase()
         purchase.product_id = product_model
         purchase.user_id = user
+        #purchase.delivery_id = purchase_delivery
         purchase.save()

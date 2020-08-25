@@ -192,6 +192,29 @@ a.navbar-brand:hover {
   text-justify: auto;
 }
 
+.p-ctm{
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  color: #ff968d;
+  text-justify: auto;
+}
+
+.p-ctm-2{
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  color: #ff968d;
+  text-justify: auto;
+}
+
+.h3-ctm{
+  font-family: "Lato", sans-serif;
+  font-size: 28px;
+  font-style: bold;
+  color: #ff968d;
+  text-justify: auto;
+}
+
 /* Footer */
 footer .main-footer {
   font-family: "Lato", sans-serif;
@@ -350,13 +373,13 @@ footer.light .footer-copyright {
   color: #fff;
 }
 
-.btn {
+.btnft {
   background-color: #ff968d;
   color: #fff;
 }
-.btn:hover,
-.btn:focus,
-.btn.active {
+.btnft:hover,
+.btnft:focus,
+.btnft.active {
   background: #f41f4e;
   color: #fff;
   -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
@@ -370,3 +393,4 @@ footer.light .footer-copyright {
   -o-transition: all 250ms ease-in-out 0s;
   transition: all 250ms ease-in-out 0s;
 }
+
