@@ -25,16 +25,14 @@ def create_delivery(request):
     if request.method == "POST":
         print(request.POST)
         form = OrderForm(request.POST)
-    
+        
 
         if form.is_valid():
-            form.save()
-            #delivery = form.save()
-            #delivery.user_id = request.user.id
-            #delivery.save()
+            delivery = form.save(commit=False)
+            delivery.user_id = request.user
+            delivery.save()
             messages.success(request, "Delivery details has has been added")
             return redirect(reverse(checkout))
-            
 
         else:
             return render(request, 'checkout/create_delivery.template.html', {
@@ -42,7 +40,7 @@ def create_delivery(request):
             })
 
     else:
-        form = OrderForm(initial={"user_id":request.user.id})
+        form = OrderForm()
         return render(request, 'checkout/create_delivery.template.html', {
                 'form': form
             })
