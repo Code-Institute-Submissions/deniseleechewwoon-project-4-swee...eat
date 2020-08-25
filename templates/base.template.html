@@ -33,9 +33,21 @@
 					<span class="ml-lg-2 ml-md-0 d-inline d-md-block d-lg-inline"><i class="fas fa-stroopwafel"></i>&nbsp;Swee...eat</span>
 				</a>
 			</div>
+            
+            
 			<div class="col-md-4 col-12 pt-2 justify-content-center d-flex order-3 order-md-2">
-				<span class="text-center"><i class="fas fa-truck"></i>&nbsp;&nbsp;FREE DELIVERY FOR ALL ORDERS</span>
+				<div>
+					<div class="row justify-content-center">
+						<span class="text-center"><i class="fas fa-truck"></i>&nbsp;&nbsp;FREE DELIVERY FOR ALL ORDERS</span>
+					</div>
+					{% if request.user.is_authenticated %}
+					<div class="row justify-content-center">
+							<span class="text-center">Welcome, {{request.user}} <i class="far fa-smile-beam"></i></span>
+					</div>
+					{% endif %}
+				</div>
 			</div>
+
 			<div class="col-md-4 col-12 d-flex justify-content-md-end justify-content-center pt-2 order-2 order-md-3">
 				{% if not request.user.is_authenticated %}
 				<a class="ml-3 nav-link"

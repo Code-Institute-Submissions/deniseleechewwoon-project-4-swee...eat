@@ -215,6 +215,39 @@ a.navbar-brand:hover {
   text-justify: auto;
 }
 
+/* Swee...eat Selections */
+.h2-ctm{
+  font-family: "Dancing Script", cursive;
+  font-style: bold;
+  color: #ff644e;
+  font-size: 70px;
+}
+
+.card-title {
+  font-family: "Dancing Script", cursive;
+  font-style: bold;
+  color: #ff644e;
+  font-size: 30px; 
+}
+
+.card-text {
+  font-family: "Lato", sans-serif;
+  color: #ff968d;
+  font-size: 14px; 
+}
+
+.text-view {
+  font-family: "Lato", sans-serif;
+  color: #f41f4e;
+  font-size: 16px; 
+}
+
+.text-view:hover {
+  font-family: "Lato", sans-serif;
+  color: #ff968d;
+  font-size: 18px;     
+}
+
 /* Footer */
 footer .main-footer {
   font-family: "Lato", sans-serif;
