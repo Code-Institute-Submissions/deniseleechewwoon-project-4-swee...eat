@@ -23,12 +23,18 @@ from django.contrib.auth.models import User
 
 def create_delivery(request):
     if request.method == "POST":
+        print(request.POST)
         form = OrderForm(request.POST)
+    
 
         if form.is_valid():
             form.save()
+            #delivery = form.save()
+            #delivery.user_id = request.user.id
+            #delivery.save()
             messages.success(request, "Delivery details has has been added")
-            return HttpResponse("delivery address added")
+            return redirect(reverse(checkout))
+            
 
         else:
             return render(request, 'checkout/create_delivery.template.html', {
@@ -36,7 +42,7 @@ def create_delivery(request):
             })
 
     else:
-        form = OrderForm()
+        form = OrderForm(initial={"user_id":request.user.id})
         return render(request, 'checkout/create_delivery.template.html', {
                 'form': form
             })
@@ -50,8 +56,6 @@ def checkout(request):
     line_items = []
 
     all_product_ids = []
-
-    all_delivery_ids = []
 
     for product_id, product in cart.items():
         product_model = get_object_or_404(Product, pk=product_id)
@@ -121,17 +125,18 @@ def payment_completed(request):
 def handle_payment(session):
     user = get_object_or_404(User, pk=session["client_reference_id"])
     all_product_ids = session['metadata']['all_products_id'].split(",")
-    #all_delivery_ids = session['metadata']['all_delivery_id'].split(",")
 
     for product_id in all_product_ids:
         product_model = get_object_or_404(Product, pk=product_id)
 
-    # for delivery_id in all_delivery_ids:
-    #     purchase_delivery = get_object_or_404(Delivery, pk=delivery_id)
+    delivery = Delivery.objects.get(user_id=user, linked=False)
 
-        # create the purchase model
-        purchase = Purchase()
-        purchase.product_id = product_model
-        purchase.user_id = user
-        #purchase.delivery_id = purchase_delivery
-        purchase.save()
+
+    # create the purchase model
+    purchase = Purchase()
+    purchase.product_id = product_model
+    purchase.user_id = user
+    purchase.delivery_id = delivery
+    delivery.linked = True
+    delivery.save()
+    purchase.save()
