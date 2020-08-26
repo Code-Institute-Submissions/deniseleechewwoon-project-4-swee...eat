@@ -332,6 +332,33 @@ a.navbar-brand:hover {
   text-justify: auto;
 }
 
+/* Cart */
+.card-title-cart{
+  font-family: "Lato", sans-serif;
+  font-style: bold;
+  font-size: 50px;
+  color: #ff644e;
+  text-justify: auto;
+  padding-top: 10px;
+}
+
+.card-title-cart-2{
+  font-family: "Lato", sans-serif;
+  font-style: bold;
+  color: #ff644e;
+  text-justify: auto;
+}
+
+.card-title-cart-3{
+  font-family: "Lato", sans-serif;
+  font-style: bold;
+  font-size: 25px;
+  color: #ff644e;
+  text-justify: auto;
+  padding-top: 10px;
+}
+
+
 /* Footer */
 footer .main-footer {
   font-family: "Lato", sans-serif;
