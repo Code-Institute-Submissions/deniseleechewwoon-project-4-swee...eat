@@ -358,7 +358,7 @@ a.navbar-brand:hover {
   padding-top: 10px;
 }
 
-/* Login */
+/* Login, Logout and Signup */
 .card-title-login{
   font-family: "Dancing Script", cursive;
   font-style: bold;
@@ -367,6 +367,22 @@ a.navbar-brand:hover {
 }
 
 .text-login{
+  font-family: "Lato", sans-serif;
+  font-style: bold;
+  font-size: 16px;
+  color: #ff644e;
+  text-justify: auto;
+}
+
+.text-logout{
+  font-family: "Lato", sans-serif;
+  font-style: bold;
+  font-size: 16px;
+  color: #ff644e;
+  text-justify: auto;
+}
+
+.text-signup{
   font-family: "Lato", sans-serif;
   font-style: bold;
   font-size: 16px;
