@@ -44,6 +44,7 @@ def create_delivery(request):
         return render(request, 'checkout/create_delivery.template.html', {
                 'form': form
             })
+        
 
 
 def checkout(request):

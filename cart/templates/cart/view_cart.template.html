@@ -39,9 +39,16 @@
                 {%endfor%}
                 
                 <h4>Cart Cost: ${{total|floatformat:2 }}</h4>
-                <a href="{% url 'checkout' %}" class="btn btn-primary">Checkout</a>
+
+				{% if not request.user.is_authenticated %}
+				<p>Please Sign in or Register</p>
+				{% endif %}
+				{% if request.user.is_authenticated %}
+				<a href="{% url 'checkout' %}" class="btn btn-primary">Checkout</a>
                 <a href="{% url 'create_delivery' %}" class="btn btn-primary">Continue</a>
                 </div>
+				{% endif %}
+                
 
 
 {%endblock%}

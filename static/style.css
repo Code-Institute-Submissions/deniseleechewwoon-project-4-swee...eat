@@ -209,7 +209,7 @@ a.navbar-brand:hover {
 
 .h3-ctm{
   font-family: "Lato", sans-serif;
-  font-size: 28px;
+  font-size: 30px;
   font-style: bold;
   color: #ff968d;
   text-justify: auto;
@@ -246,6 +246,32 @@ a.navbar-brand:hover {
   font-family: "Lato", sans-serif;
   color: #ff968d;
   font-size: 18px;     
+}
+
+/* Swee...eat Selections Details*/
+.h2-ctm-d{
+  font-family: "Dancing Script", cursive;
+  font-style: bold;
+  color: #ff644e;
+  font-size: 40px;
+}
+
+.h3-ctm-d{
+  font-family: "Lato", sans-serif;
+  font-style: bold;
+  color: #ff968d;
+  font-size: 20px;
+}
+
+.h4-ctm-d{
+  font-family: "Lato", sans-serif;
+  font-style: bold;
+  color: #ff968d;
+  font-size: 16px;
+}
+
+.badge-pill{
+    background: #ff644e;
 }
 
 /* Footer */

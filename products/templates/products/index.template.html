@@ -72,7 +72,7 @@ input:hover {
             <div class="card-column row d-flex justify-content-around">
                 {%for product in products %}
                     
-                        <div class="card mt-4" style="width: 22rem;">
+                        <div class="card mt-4" style="width: 20rem;">
                             {% cloudinary product.cover class="card-img-top" crop="fill"%}
                             <div class="card-body">
                                 <h5 class="card-title">{{product.name}}</h5>
