@@ -27,4 +27,4 @@ class Purchase(models.Model):
     delivery_id = models.ForeignKey(Delivery, on_delete=models.CASCADE)
     
     def __str__(self):
-        return f"Purchase made for product#{self.product_id} by user#{self.user_id} on {self.purchase_date}"
+        return f"Purchase made for product#{self.product_id} by user#{self.user_id} on {self.purchase_date} for {self.delivery_id}"

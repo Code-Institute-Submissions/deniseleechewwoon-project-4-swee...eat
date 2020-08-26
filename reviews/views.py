@@ -9,6 +9,7 @@ from .models import Review
 def index(request):
     return render(request, 'reviews/index.template.html')
 
+@login_required
 def create_review(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     if request.method == "POST":
@@ -33,32 +34,48 @@ def create_review(request, product_id):
                 "product": product
         })
 
+@login_required
 def edit_review(request, review_id):
     review = get_object_or_404(Review, pk=review_id)
     product_id = review.product.id
 
-    if request.method == "POST":
-        form = ReviewForm(request.POST, instance=review)
-        form.save()
-        messages.success(request, "Review has been edited")
-        return redirect(reverse('view_product_route', args=(product_id,)))
+    if review.user == request.user:
+        review = get_object_or_404(Review, pk=review_id)
+        product_id = review.product.id
+
+        if request.method == "POST":
+            form = ReviewForm(request.POST, instance=review)
+            form.save()
+            messages.success(request, "Review has been edited")
+            return redirect(reverse('view_product_route', args=(product_id,)))
+
+        else:
+            form = ReviewForm(instance=review)
+            return render(request, 'reviews/edit_review.template.html', {
+                'form': form,
+                'review': review
+            })
 
     else:
-        form = ReviewForm(instance=review)
-        return render(request, 'reviews/edit_review.template.html', {
-            'form': form,
-            'review': review
-        })
+        return HttpResponse("Permission denied.")
 
+@login_required
 def delete_review(request, review_id):
     review = get_object_or_404(Review, pk=review_id)
     product_id = review.product.id
 
-    if request.method == "POST":
-        review.delete()
-        messages.success(request, "Review has been deleted")
-        return redirect(reverse('view_product_route', args=(product_id,)))
+    if review.user == request.user:
+        review = get_object_or_404(Review, pk=review_id)
+        product_id = review.product.id
+
+        if request.method == "POST":
+            review.delete()
+            messages.success(request, "Review has been deleted")
+            return redirect(reverse('view_product_route', args=(product_id,)))
+        else:
+            return render(request, 'reviews/confirm_delete_review.template.html', {
+                'review': review
+            })
+
     else:
-        return render(request, 'reviews/confirm_delete_review.template.html', {
-            'review': review
-    })
+        return HttpResponse("Permission denied.")
