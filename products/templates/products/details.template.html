@@ -34,7 +34,7 @@
 
                             <div class="mt-3">
 							{% if not request.user.is_authenticated %}
-							<p>Please Sign in or Register</p>
+							<p class="h4-ctm-d">To make a purchase, please <a href="{%url 'account_login'%}">Sign in</a> or <a href="{%url 'account_signup'%}">Register an account</a> with us.</p>
 							{% endif %}
 							{% if request.user.is_authenticated %}
 							<a class="btn btn-cart" href="{% url 'add_to_cart' product_id=product.id %}">Add to Cart&nbsp;<i class="fa fa-cart-plus" aria-hidden="true"></i></a>
