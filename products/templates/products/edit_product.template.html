@@ -6,15 +6,35 @@
 {%block title%}Index{%endblock%}
 
 {%block content%}
-    <h1>Edit {{product.name}}</h1> 
+<!--Crispy Form Styling-->
+<style>
+label {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  color: #ff644e;
+  padding-top: 20px;
+}
+
+.form-control{
+  border: 1px solid #ff968d;
+  width: 100%
+}
+
+.textInput, .textarea, .numberinput, .select, .selectmultiple {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  color: #ff644e;
+}
+</style>
+    <h2 class="h2-ctm-d">Edit {{product.name}}</h2> 
     <form method="POST" enctype="multipart/form-data" id="form">    
     {%csrf_token%}
         {{form|crispy}}
 
         
         <div class="row mt-1 mb-2">
-            <div class="col-3"><p>Original Image</p></div>
-            <div class="col-3"><p>Updated Image <span class="status_value"></span></p></div>
+            <div class="col-3 product-text"><p>Original Image</p></div>
+            <div class="col-3 product-text"><p>Updated Image <span class="status_value"></span></p></div>
         </div>
         <div class="row mt-1 mb-2">
             <div class="col-3">{% cloudinary product.cover width=150 height=150 crop="fill"%}</div>
@@ -22,7 +42,7 @@
         </div>
 
 
-        <input type="submit" name="Update Product">
+        <input class="btn-product" type="submit" name="Update Product">
     </form>
 {%endblock%}
 

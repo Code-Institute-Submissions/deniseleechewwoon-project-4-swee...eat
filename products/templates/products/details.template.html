@@ -42,9 +42,13 @@
 							{% endif %}
 
 							{% if request.user.is_superuser %}
-							<a class="btn btn-primary" href="{% url 'update_product_route' product_id=product.id %}">Edit</a>
-                                <a class="btn btn-danger" href="{% url 'delete_product_route' product_id=product.id %}">Delete</a>
+							<a class="btn btn-edit" href="{% url 'update_product_route' product_id=product.id %}">Edit</a>
+                                <a class="btn btn-delete" href="{% url 'delete_product_route' product_id=product.id %}">Delete</a>
 							{% endif %}
+                            </div>
+
+                            <div class="pt-5">
+                                <a href="{% url 'all_products_route' %}" role="button" class="text-shop" style="text-decoration: none"><i class="fas fa-arrow-circle-left"></i> continue shopping <i class="fas fa-store"></i></a>
                             </div>
 					    </div>
 				    </div>

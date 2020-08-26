@@ -61,7 +61,7 @@
 					href="{%url 'account_logout'%}"><b><i class="fas fa-sign-out-alt"></i> LOGOUT</b></a>
 				{% endif %}
 				{% if request.user.is_superuser %}
-				<a class="nav-link ml-3" href="#"><b><i class="fas fa-user-cog"></i> ADMIN</b></a>
+				<a class="nav-link ml-3" href="{%url 'manage_products_route'%}"><b><i class="fas fa-user-cog"></i> ADMIN</b></a>
 				{% endif %}
 			</div>
 		</div>

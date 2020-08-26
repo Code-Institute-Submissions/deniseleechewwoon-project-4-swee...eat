@@ -25,7 +25,6 @@ def create_delivery(request):
     if request.method == "POST":
         print(request.POST)
         form = OrderForm(request.POST)
-        
 
         if form.is_valid():
             delivery = form.save(commit=False)
@@ -44,7 +43,6 @@ def create_delivery(request):
         return render(request, 'checkout/create_delivery.template.html', {
                 'form': form
             })
-        
 
 
 def checkout(request):

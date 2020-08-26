@@ -43,10 +43,43 @@ def index(request):
 
 
 def show_products(request):
-    all_products = Product.objects.all()
-    return render(request, 'products/all_products.template.html', {
-        'products': all_products
-    })
+    form = SearchForm(request.GET)
+    if request.GET:
+        query = ~Q(pk__in=[])
+
+        if 'name' in request.GET and request.GET['name']:
+            name = request.GET['name']
+            query = query & Q(name__icontains=name)
+
+        if 'category' in request.GET and request.GET['category']:
+            category_id = request.GET['category']
+            query = query & Q(category=category_id)
+
+        if 'price_below' in request.GET and request.GET['price_below']:
+            price_below = request.GET['price_below']
+            price_query = Q(price__lte=price_below)
+            query = query & price_query
+
+        products = Product.objects.all()
+        products = products.filter(query)
+
+        return render(request, 'products/all_products.template.html', {
+            'form': form,
+            'products': products
+        })
+
+    else:
+        products = Product.objects.all()
+        return render(request, 'products/all_products.template.html', {
+            'form': form,
+            'products': products
+        })
+
+# def show_products(request):
+#     all_products = Product.objects.all()
+#     return render(request, 'products/all_products.template.html', {
+#         'products': all_products
+#     })
 
 
 @login_required

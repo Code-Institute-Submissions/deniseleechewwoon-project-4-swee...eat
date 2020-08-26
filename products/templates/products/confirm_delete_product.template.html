@@ -1,14 +1,43 @@
 {% extends 'base.template.html'%}
+{% load cloudinary %}
 {%load static%}
 
 {%block title%}Delete Product{%endblock%}
 
 {%block content%}
-    <h1>Delete {{product.name}}</h1> 
-    <p>Are you sure?</p>
-    <form method="POST">    
-    {%csrf_token%}
-        <input class="btn btn-danger" type="submit" value="Confirm">
-        <a class="btn btn-primary" href="{% url 'all_products_route'%}">Cancel</a>
-    </form>
+	<h2 class="h2-ctm-d">Delete {{product.name}}</h2>
+	
+	<div class="row mt-4 mb-2">
+		<div class="col-sm-6 media cards-gallery">
+			{% cloudinary product.cover class="img-fluid"%}
+		</div>
+	
+		<div class="col-sm-6 align-self-center align-items-center">
+			<div class="col-sm-12">
+				<h2 class="h2-ctm-d mt-2">{{product.name}}</h2>
+				<h3 class="h3-ctm-d">{{product.category}}</h3>
+	
+				<div class="col-sm-12 p-0">
+					<h3 class="h3-ctm-d">${{product.price}}</h3>
+				</div>
+	
+				<div class="col-sm-12 p-0 m-0">
+					<h4 class="m-0 h4-ctm-d mt-3 mb-3">{{product.description}}</h4>
+				</div>
+	
+				<div class="col-sm-12 p-0 mb-2">
+					{%for tag in product.tags.all %}
+					<span class="badge badge-pill">{{tag.title}}</span>
+					{%endfor%}
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<h3 class="h3-ctm-rd">Are you sure?</h3>
+	<form method="POST">
+		{%csrf_token%}
+		<input class="btn btn-review" type="submit" value="Confirm">
+		<a class="btn btn-review" href="{% url 'manage_products_route'%}">Cancel</a>
+	</form>
 {%endblock%}
