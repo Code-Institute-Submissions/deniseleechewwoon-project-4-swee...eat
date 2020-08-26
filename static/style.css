@@ -358,6 +358,36 @@ a.navbar-brand:hover {
   padding-top: 10px;
 }
 
+/* Login */
+.card-title-login{
+  font-family: "Dancing Script", cursive;
+  font-style: bold;
+  color: #ff644e;
+  font-size: 60px; 
+}
+
+.text-login{
+  font-family: "Lato", sans-serif;
+  font-style: bold;
+  font-size: 16px;
+  color: #ff644e;
+  text-justify: auto;
+}
+
+.btn-login {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  color: white;
+  background-color: #ff968d;
+  padding: 8px 30px;
+  border: 0;
+}
+
+.btn-login:hover {
+  background: #f41f4e;
+  color: white;
+  border: 0;
+}
 
 /* Footer */
 footer .main-footer {
