@@ -5,11 +5,32 @@
 {%block title%}Delivery Address{%endblock%}
 
 {%block content%}
-    <h1>Create Delivery</h1>
+<!--Crispy Form Styling-->
+<style>
+label {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  color: #ff644e;
+  padding-top: 20px;
+}
+
+.form-control{
+  border: 1px solid #ff968d;
+  width: 100%
+}
+
+.textInput, .textarea, .numberinput, .select, .selectmultiple {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  color: #ff644e;
+}
+</style>
+
+    <h2 class="h2-ctm-d">Add in Delivery Details</h2>
     <form method="POST">    
     {%csrf_token%}
         {{form|crispy}}
-        <input type="submit" value="Continue to Make Payment >>">
+        <input class="btn-product" type="submit" value="Continue to Make Payment >>">
     </form>
 {%endblock%}
 

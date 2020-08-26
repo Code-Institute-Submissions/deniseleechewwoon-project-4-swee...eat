@@ -8,5 +8,10 @@ from reviews.models import Review
 
 
 def index(request):
-
     return render(request, 'home/index.template.html')
+
+def story(request):
+    return render(request, 'home/story.template.html')
+
+def contact(request):
+    return render(request, 'home/contact.template.html')
