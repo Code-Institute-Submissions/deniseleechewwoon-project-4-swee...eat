@@ -4,11 +4,25 @@
 {%block title%}Delete Review{%endblock%}
 
 {%block content%}
-    <h1>Delete {{review.title}}</h1> 
-    <p>Are you sure?</p>
+    <h2 class="h2-ctm-d">Delete Review: {{review.title}}</h2>
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">
+                <h2>{{review.title}}</h2>
+            </div>
+        
+            <div>
+                <h3 class="h3-ctm-r">{{review.content}}</h3>
+            </div>
+        
+            <p class="h4-ctm-r">Commented by {{review.user.username}} on {{review.date}}</p>
+        </div>
+    </div>
+
+    <h3 class="h3-ctm-rd">Are you sure?</h3>
     <form method="POST">    
     {%csrf_token%}
-        <input class="btn btn-danger" type="submit" value="Confirm">
-        <a class="btn btn-primary" href="{% url 'all_products_route'%}">Cancel</a>
+        <input class="btn btn-review" type="submit" value="Confirm">
+        <a class="btn btn-review" href="{% url 'all_products_route'%}">Cancel</a>
     </form>
 {%endblock%}

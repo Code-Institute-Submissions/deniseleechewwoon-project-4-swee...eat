@@ -3,10 +3,34 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<h1>Creating a new review for {{product.name}}</h1>
+
+<!--Crispy Form Styling-->
+<style>
+#div_id_title, #div_id_content, #div_id_date {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  color: #ff644e;
+  padding-top: 20px;
+}
+
+.textinput, .textarea, .dateinput{
+  border: 1px solid #ff968d;
+  width: 100%
+}
+
+.textInput {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  color: #ff644e;
+}
+</style>
+
+
+
+<h2 class="h2-ctm-d">Creating a new review for {{product.name}}</h2>
 <form method="POST">
  {{ form|crispy}}
  {% csrf_token %}
- <input type="submit" value="Create Review" class="btn btn-primary"/>
+ <input type="submit" value="Create Review" class="btn btn-review"/>
 </form>
 {% endblock %}

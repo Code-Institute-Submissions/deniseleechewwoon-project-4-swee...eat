@@ -57,7 +57,8 @@ def edit_review(request, review_id):
             })
 
     else:
-        return HttpResponse("Permission denied.")
+        messages.success(request, "Permission denied. You do not have access to edit this review.")
+        return redirect(reverse('view_product_route', args=(product_id,)))
 
 @login_required
 def delete_review(request, review_id):
@@ -74,8 +75,9 @@ def delete_review(request, review_id):
             return redirect(reverse('view_product_route', args=(product_id,)))
         else:
             return render(request, 'reviews/confirm_delete_review.template.html', {
-                'review': review
+                 'review': review
             })
 
     else:
-        return HttpResponse("Permission denied.")
+        messages.success(request, "Permission denied. You do not have access to delete this review")
+        return redirect(reverse('view_product_route', args=(product_id,)))
