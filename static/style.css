@@ -472,7 +472,7 @@ a.navbar-brand:hover {
   font-style: bold;
   font-size: 16px;
   color: #ff644e;
-  text-justify: auto;
+  text-align: left;
 }
 
 .text-logout{
