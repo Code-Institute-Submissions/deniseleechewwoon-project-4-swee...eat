@@ -57,7 +57,7 @@ def edit_review(request, review_id):
             })
 
     else:
-        messages.success(request, "Permission denied. You do not have access to edit this review.")
+        messages.danger(request, "Permission denied. You do not have access to edit this review.")
         return redirect(reverse('view_product_route', args=(product_id,)))
 
 @login_required
@@ -79,5 +79,5 @@ def delete_review(request, review_id):
             })
 
     else:
-        messages.success(request, "Permission denied. You do not have access to delete this review")
+        messages.danger(request, "Permission denied. You do not have access to delete this review")
         return redirect(reverse('view_product_route', args=(product_id,)))
