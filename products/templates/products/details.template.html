@@ -42,7 +42,7 @@
 							{% endif %}
 
 							{% if request.user.is_superuser %}
-                            <div class="pt-3">
+                            <div class="pt-1">
 							<br><a class="btn btn-edit" href="{% url 'update_product_route' product_id=product.id %}">Edit</a>
                                 <a class="btn btn-delete" href="{% url 'delete_product_route' product_id=product.id %}">Delete</a>
                             </div>
