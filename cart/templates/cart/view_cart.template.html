@@ -46,7 +46,7 @@
 
                 <div class="d-flex justify-content-end">
                         {% if not request.user.is_authenticated %}
-                        <p>Please Sign in or Register</p>
+                        <p class="h4-ctm-d">To make a purchase, please <a href="{%url 'account_login'%}">Sign in</a> or <a href="{%url 'account_signup'%}">Register an account</a> with us.</p>
                         {% endif %}
                         {% if request.user.is_authenticated %}
                         <a href="{% url 'create_delivery' %}" class="btn btn-cart">Confirm Order and Proceed to Key in Delivery Details&nbsp;&nbsp;<i class="fas fa-arrow-circle-right"></i></a>
