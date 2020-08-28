@@ -158,23 +158,70 @@ Due to the project time constraints and longer learning period of Django, featur
 
 ## Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+## Testing
+The site is manually tested on a macbook pro, windows laptop, andriod mobile device (Samsung note 9) and ipad to ensure the responsiveness and that all the links work well.
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+* Page content fits device width and is responsive on all devices
+* Text on the page is readable
+* Links and tap targets are sufficiently large and touch-friendly
+* The navbar to access all the pages (Login, Register, Logout, Admin, Home, Sweet Selections, Our Story, Contact Us and Shopping Cart) is tested to ensure it works well on all platforms
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+On all platforms, the following were tested
 
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
+1. Landing Page
+    - The hover effect on the images works well with every refresh
+    - The navigation button is able to bring the users to the shop works well
+2. Shop (Products)
+    - All the item listings show up without error on every refresh
+    - Navbar links work well
+    - Searchbar: Selected a category and enter a blank search term displays all listings of the category
+    - Searchbar: Enter a "search term" displays all listings of the "search term"
+    - Searchbar: Enter a "maximum price" displays all listings below the search price
+    - Searchbar: Stack the requirements and it displays the listings well
+    - Upon click on view more, it was redirected to show the details of the particular item
+3. View Individual Product Page
+    Not logged in, logged in as site user, logged in as admin user:
+    - Details were displayed well with click from main listing page
+    Login in as site user:
+    - Add to cart button works well
+    - CRUD works well for adding, view, edit and delete reviews
+    - Added a review, edited and deleted it, works well
+    Login in as site admin:
+    - Add to cart button works well
+    - CRUD works well for adding, view, edit and delete reviews
+    - Added a review, edited and deleted it, works well
+    - Delete item works well
+    - Edit item works well
+4. Cart
+    - Updated quantity in cart and amount increase accordingly
+    - Removed an item in cart
+    - Click on button and it works well to bring to the next page to add in delivery details
+5. Checkout
+    - Form to add in delivery address works well
+    - After submission, was directed to the strips payment page
+    - Tested with the test credit card number and payment is completed and user redirected back to the product listings page
+6. Admin Page
+    * Add Product Listing
+        - Add product form works well
+    * Edit Product listing Page
+        - Details displayed were of selected entry from main products page
+        - Tried to update all fields and uploaded a new image and it displays well and return to main products page
+        (Note: There is a cloudinary error for uploading the image at the update page, will need to upload and submit twice before it can successfuly update)
+    * Delete Product listing Page
+        - Details displayed were of selected entry from main products page
+        - Click on Delete and Entry was deleted and return to main admin page
+        - Click on cancel and entry was not deleted and return to main admin page
+7. Login, logout, forget password and register
+    - Tested to resgister an account and received email verification
+    - Verified user and login and it works
+    - Logout and it works
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+The site was manually tested on different browsers (Chrome, Safari, Morzilla Firefox and Internet Explorer).
+The site works well on all browsers.
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+The site was also tested using online platform [Mobile-Friendly Test](https://search.google.com/test/mobile-friendly) and results show that page is mobile friendly and easy to use on a mobile device.
+
 
 ## Deployment
 This project is coded on Gitpod and respositories are on GitHub. The website is deployed and hosted using Heroku directly from the master branch in Github. The database was created on Django's sqlite but transferred into Postgres after deployment on Heroku.
