@@ -1,14 +1,26 @@
 <img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
 
-# Sweet Eats Bakery E-commerce Shop
+# Sweet Eats Bakery Online Shop
 # Code Institute - Full Stack Frameworks with Django Milestone Project (4)
 
-One or two paragraphs providing an overview of your project.
+This is an online shop for Sweet Eats Bakery. 
 
-Essentially, this part is your sales pitch.
- 
+To meet the increasing demand of consumers turning to online platforms for food products like cakes, chocolates and macarons, Sweet Eats requires a platform to increase revenue by selling high their products online. Moreover, it gives a platform for consumers to leave their reviews and recommend other users visiting the site.
+
+Hence, an online mobile-friendly website was created to enable potential consumers to register for an account, login, browse through the shop items, view details of the item, add or remove products from their shopping cart, checkout, make payments for their purchase and even leave reviews for the items.
+
+The website maybe accessed from [here](https://dlcw-sweeeat.herokuapp.com/)
+
+**To login as a site user**
+username: chocolate
+password: cakeslover
+
+**To login as a site admin**
+username: adminuser
+password: adminaccess123
+
 ## UX
-[Wireframe](readme/wireframe.pdf)
+[Wireframe](https://drive.google.com/file/d/1mpBa-qnHYB-iGsU0rAgWGLpVspTyOQpB/view?usp=sharing)
 ![userstories](readme/userstories.jpg)
  
 Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
