@@ -135,11 +135,57 @@ In addition, if it is not obvious, you should also describe how to run your code
 ## Credits
 
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+- The text for the Category Description is taken and modified from the following website
+    - Cupcakes Description - [Twelve Cupcakes](https://twelvecupcakes.com/menu/cupcakes/)
+    - Chocolate Truffles - [Awfully Chocolate](https://www.awfullychocolate.com/the-perfect-gift/gorgeous-truffles/)
+    - Macarons - [TWG](https://twgtea.com/tea-table/gourmet-delicacies/twg-tea-macarons-assorted)
+    - Whole Cakes - [Awfully Chocolate](https://www.awfullychocolate.com/chocolate-cakes/signature-cakes/)
+
+- The quote and text for the "Our Story" is taken and modified from the following website
+    - [Edith Patisserie](https://www.edithpatisserie.com/about-us)
+    - [Pinterest] (https://www.pinterest.com/pin/538602436666824480/?nic_v2=1av5yJr3C)
+
+
 
 ### Media
-- The photos used in this site were obtained from ...
+- The photos used in this site were all obtained from [Unsplash](https://unsplash.com/) - a stock image library.
+    Please refer to the Links of images used
+    - https://unsplash.com/photos/li0iC0rjvvg
+    - https://unsplash.com/photos/2XK4UufbjdU
+    - https://unsplash.com/photos/_TN1m5R1pFI
+    - https://unsplash.com/photos/dcPNZeSY3yk
+    - https://unsplash.com/photos/GTMGG-xvxdU
+    - https://unsplash.com/photos/On2VseHUDXw
+    - https://unsplash.com/photos/tA3sJ4u09eU
+    - https://unsplash.com/photos/9sKcBBMII6Q
+    - https://unsplash.com/photos/a0ex7idMUG4
+    - https://unsplash.com/photos/hB6HN7hzcgg
+    - https://unsplash.com/photos/j_bB5QqigfU
+    - https://unsplash.com/photos/116JtRtf0QI
+    - https://unsplash.com/photos/xatIo9Ksfb0
+    - https://unsplash.com/photos/Uv5FRPKBwvU
+    - https://unsplash.com/photos/KPpU6rCIziQ
+    - https://unsplash.com/photos/UxnSB5nTZDs
+    - https://unsplash.com/photos/mLfDsNR-bs0
+    - https://unsplash.com/photos/8Vuq1nSzmgo
+    - https://unsplash.com/photos/yHpA0SYKfMY
+    - https://unsplash.com/photos/rXB9YjOQX8I
+    - https://unsplash.com/photos/lo0eEGA2fYk
+    - https://unsplash.com/photos/On2VseHUDXw
+    - https://unsplash.com/photos/P68yv6bC2pI
+    - https://unsplash.com/photos/ySxSlqeC0YM
+    - https://unsplash.com/photos/OYKZNEwdZus
 
 ### Acknowledgements
+- CSS Styling by [Bootstrap4](https://getbootstrap.com/)
+- All fonts used for this site are obtained from [google fonts](https://fonts.google.com/)
+- All icons used for this site are obtained from [Fonts Awesome](https://fontawesome.com/)
+- Theme and Design of Website is inspired by [Swee tooth](https://sweettooth.qodeinteractive.com/landing-page/?utm_source=pinterest&utm_medium=pin&utm_campaign=bestwpdesign) and [Edith Patisserie](https://www.edithpatisserie.com/about-us)
+- Image Hover Effects is modified from [Mike Tricking](https://miketricking.github.io/bootstrap-image-hover/)
+- Foort is modified from [Color Lib](https://colorlib.com/wp/bootstrap-footer/)
+- Icons, design and wireframe are created using [Apple Keynote](https://www.apple.com/sg/keynote/)
+- Django is learnt and taught from walkthrough by Instructor, Paul Chor from [Trent Global College](https://www.trentglobal.edu.sg/)
 
-- I received inspiration for this project from X
+## This website created is for educational use.
+## NOTE: This online shop is entirely fictional 
+
