@@ -9,19 +9,26 @@ To meet the increasing demand of consumers turning to online platforms for food 
 
 Hence, an online mobile-friendly website was created to enable potential consumers to register for an account, login, browse through the shop items, view details of the item, add or remove products from their shopping cart, checkout, make payments for their purchase and even leave reviews for the items.
 
+For the site owner, there will be an admin panel where they are able to search for the existing items, create new item listing, edit existing listing and remove items that are not for sale at the shop.
+
 The website maybe accessed from [here](https://dlcw-sweeeat.herokuapp.com/)
 
 **To login as a site user**
-username: chocolate
-password: cakeslover
+`username: chocolate`
+`password: cakeslover`
 
 **To login as a site admin**
-username: adminuser
-password: adminaccess123
+`username: adminuser`
+`password: adminaccess123`
 
 ## UX
-[Wireframe](https://drive.google.com/file/d/1mpBa-qnHYB-iGsU0rAgWGLpVspTyOQpB/view?usp=sharing)
+
+
+## User Stories
 ![userstories](readme/userstories.jpg)
+
+## Wireframe
+Click [here](https://drive.google.com/file/d/1mpBa-qnHYB-iGsU0rAgWGLpVspTyOQpB/view?usp=sharing) to view the wireframe
  
 Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
