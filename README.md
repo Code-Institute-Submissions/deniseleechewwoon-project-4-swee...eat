@@ -16,30 +16,34 @@ The website maybe accessed from [here](https://dlcw-sweeeat.herokuapp.com/)
 ##### To login as a site user
 
 `username: chocolate`
-
 `password: cakeslover`
 
 ##### To login as a site admin
 
 `username: adminuser`
-
 `password: adminaccess123`
 
 ## UX
 
+In order to achieve the intent of capturing the viewers attention to the products that are showcased, the website aims to portray a very simple and minimalist feel. The use of blank space and clean minimalist icons allow the viewer attention to be focused mainly on the products. A five-colour palette scheme consisting of mostly warm colours was maintained throughout the whole website design. This is consistent and evident through the the wireframe. A copy of the wireframe me be viewed [here](https://drive.google.com/file/d/1mpBa-qnHYB-iGsU0rAgWGLpVspTyOQpB/view?usp=sharing).
+
+Besides the look, the website also ensure that it is user-friendly and interactive. When a user first enter the website, they will be greeted by four  photos (shows description upon hovering) which illustrate the categories of the items followed by a main navigation button which clearly specifies the intent - to bring them to view the products.
+
+The use of minimal clicks to navigate the website allow users to have a good browsing experience when going through the website. Icons were placed with thought to allow users to intuitively click on them to navigate pages. 
+
+At the products page, users are able to easily search the items by the name, category and/or the price. When the viewers click view more, they will be brought to show description, price and add to cart feature of the product.
+A review section was added to allow some degree of interaction among the customers. They may add, edit or event delete review entries uploaded. 
+
+When a user perform an action, a notification will pop-up which informs the user that the action is completed successfully or is an unsuccessful attempted.
+
+When a site user or an admin user logins to the site, the top nav-bar shows different navlinks for different users. For instance, for a site user, it will just show welcome (username) in the middle section and a logout button at the far right. For a site admin, it will show welcome (admin name) in the middle section and a logout and admin button at the far right. The admin button brings the admin user to the admin site to view, add, update and delete products.
+
+A user will be highly encouraged to register an account to view more features such as making a purchase and leaving a review. Hence, there will be a message to direct them to the register or login page.
+
+Apart from that, the display of the website differs for a desktop and mobile view to allow the same experience on all devices and platforms. All in all, the website is created with the intent to fulfil the users' needs in a straighforward and forthcoming approach.
 
 ## User Stories
 ![userstories](readme/userstories.jpg)
-
-## Wireframe
-Click [here](https://drive.google.com/file/d/1mpBa-qnHYB-iGsU0rAgWGLpVspTyOQpB/view?usp=sharing) to view the wireframe
- 
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
-
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-- As a user type, I want to perform an action, so that I can achieve a goal.
-
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
 
 ## Features
 
@@ -58,11 +62,43 @@ In addition, you may also use this section to discuss plans for additional featu
 
 ## Technologies Used
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
+### Frameworks
+1. Django 2 (2.2.6)
+2. Python 3
 
-- [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
+### Styling
+* [HTML](https://www.w3schools.com/html/) - standard markup language for creating web pages
+    - HTML is basically used throughout the whole document to construct the various segments and putting things together
 
+* [CSS](https://www.w3schools.com/css/) - describes the style of the HTML document
+    - CSS is important to maintain the look, style and feel of the website
+
+* [Bootstrap 4.4](https://getbootstrap.com/docs/4.4/getting-started/introduction/) - popular framework for building responsive, mobile-first sites
+    - Bootstrap framework makes things easier to have basic features and minimised the use of css styling with bootstrap features
+
+* [Crispy Form](https://django-crispy-forms.readthedocs.io/en/latest/)
+    - Display Django forms nicely on the webpages
+
+* [Javascript](https://www.youtube.com/watch?v=gnDOjWUSHks)
+    - Javascript is used to enhance the Cloudinary upload photo experience
+
+* [Google Fonts](https://fonts.google.com/)
+    - Used of appropriate fonts for website theme
+
+* [Font Awesome](https://fontawesome.com/)
+    - Add icons to enhance the feel for clickable links
+
+### Additional Plugins
+* Stripe (payments)
+* Cloudinary (uploading of photos)
+* Gunicorn (WSGI application server)
+* Psycopg2 (PostgreSQL database adaptor for Python)
+* Pillow (PIL fork)
+* Whitenoise (simplified static file serving for Python web apps)
+
+### Database
+* PostgreSQL
+* dbsqlite3
 
 ## Testing
 
