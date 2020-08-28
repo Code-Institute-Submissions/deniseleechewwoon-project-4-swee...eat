@@ -179,17 +179,17 @@ On all platforms, the following were tested
     - Upon click on view more, it was redirected to show the details of the particular item
 3. View Individual Product Page
     * Not logged in, logged in as site user, logged in as admin user:
-    - Details were displayed well with click from main listing page
+        - Details were displayed well with click from main listing page
     * Login in as site user:
-    - Add to cart button works well
-    - CRUD works well for adding, view, edit and delete reviews
-    - Added a review, edited and deleted it, works well
+        - Add to cart button works well
+        - CRUD works well for adding, view, edit and delete reviews
+        - Added a review, edited and deleted it, works well
     * Login in as site admin:
-    - Add to cart button works well
-    - CRUD works well for adding, view, edit and delete reviews
-    - Added a review, edited and deleted it, works well
-    - Delete item works well
-    - Edit item works well
+        - Add to cart button works well
+        - CRUD works well for adding, view, edit and delete reviews
+        - Added a review, edited and deleted it, works well
+        - Delete item works well
+        - Edit item works well
 4. Cart
     - Updated quantity in cart and amount increase accordingly
     - Removed an item in cart
@@ -200,7 +200,7 @@ On all platforms, the following were tested
     - Tested with the test credit card number and payment is completed and user redirected back to the product listings page
 6. Admin Page
     * Add Product Listing
-        - Add product form works well
+        - Add product form and works well
     * Edit Product listing Page
         - Details displayed were of selected entry from main products page
         - Tried to update all fields and uploaded a new image and it displays well and return to main products page
@@ -334,7 +334,7 @@ git push heroku master
 - All icons used for this site are obtained from [Fonts Awesome](https://fontawesome.com/)
 - Theme and Design of Website is inspired by [Swee tooth](https://sweettooth.qodeinteractive.com/landing-page/?utm_source=pinterest&utm_medium=pin&utm_campaign=bestwpdesign) and [Edith Patisserie](https://www.edithpatisserie.com/about-us)
 - Image Hover Effects is modified from [Mike Tricking](https://miketricking.github.io/bootstrap-image-hover/)
-- Foort is modified from [Color Lib](https://colorlib.com/wp/bootstrap-footer/)
+- Footer is modified from [Color Lib](https://colorlib.com/wp/bootstrap-footer/)
 - Icons, design and wireframe are created using [Apple Keynote](https://www.apple.com/sg/keynote/)
 - Django is learnt and taught from walkthrough by Instructor, Paul Chor from [Trent Global College](https://www.trentglobal.edu.sg/)
 
