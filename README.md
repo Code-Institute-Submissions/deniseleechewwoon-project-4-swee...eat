@@ -26,7 +26,7 @@ The website may be accessed from [here](https://dlcw-sweeeat.herokuapp.com/)
 
 ## UX
 
-In order to achieve the intent of capturing the viewers attention to the products that are showcased, the website aims to portray a very simple and minimalist feel. The use of blank space and clean minimalist icons allow the viewer attention to be focused mainly on the products. A five-colour palette scheme consisting of mostly warm colours was maintained throughout the whole website design. This is consistent and evident through the the wireframe. A copy of the wireframe me be viewed [here](https://drive.google.com/file/d/1mpBa-qnHYB-iGsU0rAgWGLpVspTyOQpB/view?usp=sharing).
+In order to achieve the intent of capturing the viewers attention to the products that are showcased, the website aims to portray a very simple and minimalist feel. The use of blank space and clean minimalist icons allow the viewer attention to be focused mainly on the products. A five-colour palette scheme consisting of mostly warm colours was maintained throughout the whole website design. This is consistent and evident through the the wireframe. A copy of the wireframe me be viewed [here](https://drive.google.com/file/d/1DaxBSyrRYWKR2WWXav0VTNfP4I0tSy30/view?usp=sharing).
 
 Besides the look, the website also ensure that it is user-friendly and interactive. When a user first enter the website, they will be greeted by four  photos (shows description upon hovering) which illustrate the categories of the items followed by a main navigation button which clearly specifies the intent - to bring them to view the products.
 
@@ -122,7 +122,7 @@ You should also mention in this section any interesting bugs or problems you dis
 If this section grows too long, you may want to split it off into a separate file and link to it from here.
 
 ## Deployment
-This project is coded on Gitpod and respositories are on GitHub. The website is deployed and hosted using Heroku from the master branch in Github. The database was created on Django's sqlite but transferred into Postgres after deployment on Heroku.
+This project is coded on Gitpod and respositories are on GitHub. The website is deployed and hosted using Heroku directly from the master branch in Github. The database was created on Django's sqlite but transferred into Postgres after deployment on Heroku.
 
 From my git repository, I have proceed to deploy to Heroku.
 For deployment to Heroku, the following steps were taken
@@ -183,8 +183,6 @@ git push
 ```
 git push heroku master
 ```
-
-
 
 ## Credits
 
