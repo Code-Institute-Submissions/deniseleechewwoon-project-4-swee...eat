@@ -122,16 +122,69 @@ You should also mention in this section any interesting bugs or problems you dis
 If this section grows too long, you may want to split it off into a separate file and link to it from here.
 
 ## Deployment
-```
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+This project is coded on Gitpod and respositories are on GitHub. The website is deployed and hosted using Heroku from the master branch in Github. The database was created on Django's sqlite but transferred into Postgres after deployment on Heroku.
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
-
-In addition, if it is not obvious, you should also describe how to run your code locally.
+From my git repository, I have proceed to deploy to Heroku.
+For deployment to Heroku, the following steps were taken
+1. Install Dependencies
 ```
+pip3 install gunicorn
+pip3 install psycopg2
+pip3 install Pillow
+pip3 install whitenoise 
+pip3 install dj_database_url
+```
+2. Add Whitenoise to the Middleware inside my project folder - settings.py
+```
+MIDDLEWARE = [
+.....
+'whitenoise.middleware.WhiteNoiseMiddleware'
+]
+```
+3. Ensure my .gitignore file is created in the root folder
+4. Login to Heroku on the gitpod terminal
+```
+heroku login -i
+```
+5. Create the Heroku App via the Gitpod terminal
+```
+heroku create dlcw-sweeeat
+```
+6. Double check the Heroku App has been created successfully.
+Heroku will add two origins to your git remotes. Do a check by running the following:
+```
+git remote -v
+```
+7. Copy environment variables over from .env to Heroku Dashboad >> Settings >> Reval Config Vars
+8. In the root folder, create a file named Procfile
+9. Open the Procfile, and enter the following 
+```
+web: gunicorn SweeEatProject.wsgi:application
+```
+10. Update ALLOWED_HOSTS inside Project folder > settings.py
+```
+https://dlcw-sweeeat.herokuapp.com/
+```
+11. Generate requirements.txt so that Heroku will know what packages install.
+```
+pip3 freeze --local > requirements.txt
+```
+12. Add STATIC_ROOT to your settings.py file
+```
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+```
+13. Before deploying to Heroku,  commit the code to your git repository
+```
+git add .
+git commit -m "your commit message"
+git push
+```
+14. Finally, make a push to Heroku
+```
+git push heroku master
+```
+
+
 
 ## Credits
 
