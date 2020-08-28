@@ -157,8 +157,6 @@ Due to the project time constraints and longer learning period of Django, featur
 * dbsqlite3
 
 ## Testing
-
-## Testing
 The site is manually tested on a macbook pro, windows laptop, andriod mobile device (Samsung note 9) and ipad to ensure the responsiveness and that all the links work well.
 
 * Page content fits device width and is responsive on all devices
@@ -180,13 +178,13 @@ On all platforms, the following were tested
     - Searchbar: Stack the requirements and it displays the listings well
     - Upon click on view more, it was redirected to show the details of the particular item
 3. View Individual Product Page
-    Not logged in, logged in as site user, logged in as admin user:
+    * Not logged in, logged in as site user, logged in as admin user:
     - Details were displayed well with click from main listing page
-    Login in as site user:
+    * Login in as site user:
     - Add to cart button works well
     - CRUD works well for adding, view, edit and delete reviews
     - Added a review, edited and deleted it, works well
-    Login in as site admin:
+    * Login in as site admin:
     - Add to cart button works well
     - CRUD works well for adding, view, edit and delete reviews
     - Added a review, edited and deleted it, works well
