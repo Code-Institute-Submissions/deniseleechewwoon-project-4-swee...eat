@@ -9,7 +9,7 @@ Essentially, this part is your sales pitch.
  
 ## UX
 [Wireframe](https://drive.google.com/file/d/1ZPt-NCnP-v5vOl3gIXFhYpDju0n0uf9y/view?usp=sharing)
-![userstories](readme/wireframe.png)
+![userstories](readme/userstories.jpg)
  
 Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
