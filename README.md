@@ -13,12 +13,16 @@ For the site owner, there will be an admin panel where they are able to search f
 
 The website maybe accessed from [here](https://dlcw-sweeeat.herokuapp.com/)
 
-**To login as a site user**
+##### To login as a site user
+
 `username: chocolate`
+
 `password: cakeslover`
 
-**To login as a site admin**
+##### To login as a site admin
+
 `username: adminuser`
+
 `password: adminaccess123`
 
 ## UX
