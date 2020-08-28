@@ -11,16 +11,17 @@ Hence, an online mobile-friendly website was created to enable potential consume
 
 For the site owner, there will be an admin panel where they are able to search for the existing items, create new item listing, edit existing listing and remove items that are not for sale at the shop.
 
-The website maybe accessed from [here](https://dlcw-sweeeat.herokuapp.com/)
+The website may be accessed from [here](https://dlcw-sweeeat.herokuapp.com/)
 
 ##### To login as a site user
-
 `username: chocolate`
+
 `password: cakeslover`
 
 ##### To login as a site admin
 
 `username: adminuser`
+
 `password: adminaccess123`
 
 ## UX
@@ -121,7 +122,7 @@ You should also mention in this section any interesting bugs or problems you dis
 If this section grows too long, you may want to split it off into a separate file and link to it from here.
 
 ## Deployment
-
+```
 This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
 
 In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
@@ -130,7 +131,7 @@ In particular, you should provide all details of the differences between the dep
 - Separate git branch?
 
 In addition, if it is not obvious, you should also describe how to run your code locally.
-
+```
 
 ## Credits
 
