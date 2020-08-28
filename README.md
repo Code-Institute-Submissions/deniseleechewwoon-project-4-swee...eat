@@ -47,19 +47,74 @@ Apart from that, the display of the website differs for a desktop and mobile vie
 ![userstories](readme/userstories.jpg)
 
 ## Features
-
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
  
 ### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
+1. Landing Page, Our Story, Contact Us and Overall (Navigation Bar and Footer)
+* Landing Page
+    - The site user will be welcomed with four nice photos which illustrates the categories of items the shop sells. Upon hovering on each image, there will be a short description on the category.
+    - The site user can also quickly access the Shop by clicking the center aligned button "Shop Now". To maitain the overall thematic deisgn, upon hovering on the button, it will change to a pink button.
+* Our Story
+    - Shows the story of the company in bootstrap card format.
+    - Clean and consistent with overall theme
+* Contact Us
+    - Shows the contact us of the company in bootstrap card format.
+    - Clean and consistent with overall theme
+    - Button with mailto: the company email
+* Navigation Bar (Mobile Responsive)
+    -   The navigation bar collapse in mobile view and will be able to toggle open and close the navgation bar by tapping on the burger icon.
+    - Sticky-top Navigation bar ensures easy navigation for the site users.
+    - The top tier navgiation bar has three sections (Left, Middle and Right)
+        - Left: Logo for the company prominently sits on the top left of the page
+        - Middle: This shows a welcome message to the login user "Welcome, 'username'"
+        - Right: The navigation links changes with the log in user. If the login user is a customer, it will just show logout. If the login user is an admin user, it will show logout and admin. The admin will be able to then access the admin page easily to perform (C-Create, R-Read, U-Update, D-Delete) CRUD tasks on the product listings.
+* Footer (Mobile Responsive)
+    - A fully mobile responsive footer that changes its layout when in mobile-view.
+    - A site map which also show links to the various part of the website
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
+2. Admin Page
+* When an admin user login to the site, the admin navigation link will appear on the top right of the webpage.
+* Upon landing on the admin page, the admin user may:
+    - Add New Products 
+    - View and search for existing product listings in the database based on name, category and price
+    - Edit any existing product listing in the database (Note: There is a cloudinary error for uploading the image at the edit page, will need to upload and submit twice before it can successfuly update)
+    - Remove any existing product in the database
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+3. Register an account and Logins
+* Login and logout
+* Register an account
+* Password register
+
+4. Sweet Selections (Shop)
+* View all products in the shop or search them based on name, category and price
+* When a site user is not login:
+    - View individual product details, price, description and reviews of the product
+* When a site user is login:
+    - View individual product details, price, description and reviews of the product
+    - Add to cart function will be shown
+    - Add a review function will be shown 
+    - Site user may perform (C-Create, R-Read, U-Update, D-Delete) CRUD tasks to add a review, view the review in the bottom section, edit the review and delete the review. User will only be able to edit and delete reviews added by themself
+* When a site admin is login:
+    - Add to cart function will be shown
+    - Add a review function will be shown
+    - Edit button will be shown (Note: There is a cloudinary error for uploading the image at the edit page, will need to upload and submit twice before it can successfuly update)
+    - Delete button will be shown to delete the product listing in the database
+
+5. Cart
+* Site user will be able to update the quantity of the item added in the cart
+* Site user may remove (delete) item that is added to the cart
+* Confirming the order will bring the user to the add address section and checkout
+
+6. Checkout
+* Site user will be able to add the delivery address
+* After adding the delivery address, user will be directed to the payment gateway - Stripe to make payment using any form of credit card
 
 ### Features Left to Implement
-- Another feature idea
+Due to the project time constraints and longer learning period of Django, features that will better complete a user experience for the online shop were left out
+1. Add Pagination to the shop (limiting to 8 items per page)
+2. Site User to be able to view their transaction history and delivery status
+3. Site User will be able to add a profile page to add in their personal details (delivery address, name, profile picture and edit when they prefer)
+3. Discount codes function for product
+4. Admin user will be able to change the delivery status of the purchases for each user.
 
 ## Technologies Used
 
